@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Voz Animal</title>
+    <meta name="description" content="Unidos pela causa animal, divulgando a promoção do bem-estar, a proteção e os direitos dos animais, combatendo a crueldade, o abandono e a exploração.">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <a href="">
+            <img class="img-menu" src="img/logo-200.png" alt="Logo do site Voz Animal">
+        </a>
+        <span id="icon-menu" class="material-symbols-outlined" onclick="mostrarMenu()"> menu </span>
+        <nav class="menu">
+            <ul class="lista-menu" id="listaMenu">
+                <li><a class="menu-item" href="">Ongs</a></li>   
+                <hr class="linha-menu">
+
+                <li><a class="menu-item" href="">Denuncia</a></li>
+                <hr class="linha-menu">
+
+                <li><a class="menu-item" href="">Informação</a></li>
+                <hr class="linha-menu">
+
+                <li><a class="menu-item" href="">Saúde pet</a></li>
+                <hr class="linha-menu">
+
+                <li><a class="menu-item" href="">Voluntariado</a></li>
+                <hr class="linha-menu">
+
+                <li><a class="menu-item" href="">Login</a></li>
+                <hr class="linha-menu">
+            </ul>
+            
+        </nav>
+    </header>
+    <main>
+        <section class="container-principal">
+           
+           <div class="caixa-cão">
+            <picture>
+                <source media="(max-width: 708px)" srcset="img/cão-239.png">
+                <img id="cão-cinza" src="img/cão-1200.png" alt="cachorro cinza">
+            </picture>
+           </div> 
+           <div class="caixa-titulo">
+                <h1>Transforme o abandono em amor</h1>
+            </div>
+
+        </section>
+
+        <section><!--parte sobre denucia-->
+            <h2>Denuncie</h2>
+            <h3>Maltratar animais é crime no Brasil, conforme a Lei nº 9.605/1998, a qual prevê sanções penais e administrativas</h3>
+            <button>Saber mais</button>
+        </section>
+        <section><!--parte sobre ongs-->
+            <h2>Conheça ongs que protejem os animais</h2>
+            <div>
+                <img src="" alt="">
+                <h4></h4>
+            </div>
+            <div>
+                <img src="" alt="">
+                <h4></h4>
+            </div>
+            <div>
+                <img src="" alt="">
+                <h4></h4>
+            </div>
+        </section>
+        <section><!--parte sobre alguns artigos-->
+            <h2>Confira também:</h2>
+            <div>
+                <a href="">
+                    <img src="" alt="">
+                    <h4></h4>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script> //começo do meu js
+        function mostrarMenu() {
+            const menu = document.getElementById('listaMenu');
+
+            // Se o menu está ativo (visível)
+            if (menu.classList.contains('active')) {
+                // Remove a classe 'active' para fechar o menu
+                menu.classList.remove('active');
+            } else {
+                // Adiciona a classe 'active' para abrir o menu
+                menu.classList.add('active');
+            }
+    }
+
+    </script>
+</body>
+</html>
