@@ -236,4 +236,7 @@ h1{
     .caixa-titulo{
         border-radius: 20px;
     }
+    .container-principal{
+        align-items: start;
+    }
 }
