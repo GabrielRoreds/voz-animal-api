@@ -78,7 +78,6 @@ nav{
         align-items: center;
         justify-content: space-around;
         display: none;  /*esconde o menu que foi deslocado*/
-
         transform: translateX(100%); /*desloca o menu para o eixo x*/
         z-index: 20; /*menu fica sobre a caixa titulo*/
     }
@@ -93,7 +92,6 @@ nav{
         height: 55px;
         position: relative;/*para que z-index seja aceito*/
         z-index: 22;
-       
     }
 
 }
@@ -219,6 +217,7 @@ h1{
     }
     #cão-cinza{
         max-width: 100%;
+        min-height: 400px;
     }
 }
 @media(max-width:625px){
