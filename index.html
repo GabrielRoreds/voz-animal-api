@@ -12,7 +12,7 @@
 <body>
     <header>
         <a href="">
-            <img class="img-menu" src="img/logo-200.png" alt="Logo do site Voz Animal">
+            <img class="img-menu" src="img/logo-200.png" alt="Logo do Voz Animal">
         </a>
         <span id="icon-menu" class="material-symbols-outlined" onclick="mostrarMenu()"> menu </span>
         <nav class="menu">
@@ -44,7 +44,7 @@
            <div class="caixa-cão">
             <picture>
                 <source media="(max-width: 708px)" srcset="img/cão-239.png">
-                <img id="cão-cinza" src="img/cão-1200.png" alt="cachorro cinza">
+                <img id="cão-cinza" src="img/cão-1200.png" alt="cachorro cinza com olhos azuis">
             </picture>
            </div> 
            <div class="caixa-titulo">
@@ -53,10 +53,17 @@
 
         </section>
 
-        <section><!--parte sobre denucia-->
-            <h2>Denuncie</h2>
-            <h3>Maltratar animais é crime no Brasil, conforme a Lei nº 9.605/1998, a qual prevê sanções penais e administrativas</h3>
-            <button>Saber mais</button>
+        <section class="container-denuncia"> <!--parte sobre denucia-->
+
+            <!--<div class="caixa-denuncia"> -->
+                <h2>Denuncie</h2>
+                <h3>Maltratar animais é crime no Brasil, conforme a Lei nº 9.605/1998, a qual prevê sanções penais e administrativas.</h3>
+                <button id="botão-artigo">Confira o artigo</button>
+            <!--</div>-->
+            <figure class="fig-img2">
+                <img id="cão-grade" src="img/denuncia-600.png" alt="cachorro olhando através de barras de metal enferrujadas.">
+            </figure>
+
         </section>
         <section><!--parte sobre ongs-->
             <h2>Conheça ongs que protejem os animais</h2>
