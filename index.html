@@ -40,7 +40,6 @@
     </header>
     <main>
         <section class="container-principal">
-           
            <div class="caixa-cão">
             <picture>
                 <source media="(max-width: 708px)" srcset="img/cão-239.png">
@@ -50,17 +49,14 @@
            <div class="caixa-titulo">
                 <h1>Transforme o abandono em amor</h1>
             </div>
-
         </section>
 
         <section class="container-denuncia"> <!--parte sobre denucia-->
-
-            <!--<div class="caixa-denuncia"> -->
                 <h2>Denuncie</h2>
                 
                 <p id="lei-maus-tratos">Maltratar animais é crime no Brasil, conforme a Lei nº 9.605/1998, a qual prevê sanções penais e administrativas.</p>
                 <button id="botão-artigo">Confira o artigo</button>
-            <!--</div>-->
+        
             <figure class="fig-img2">
                 <img id="cão-grade" src="img/denuncia-600.png" alt="cachorro olhando através de barras de metal enferrujadas.">
             </figure>
@@ -69,7 +65,9 @@
         <section><!--parte sobre ongs-->
             <h2>Conheça ongs que protejem os animais</h2>
             <div>
-              <figure><img src="" alt=""></figure>  
+              <figure>
+                <img src="" alt="">
+            </figure>  
                 <h4></h4>
             </div>
             <div>
@@ -81,17 +79,49 @@
                 <h4></h4>
             </div>
         </section>
-        <section><!--parte sobre alguns artigos-->
+        <section class="container-artigos"><!--parte sobre alguns artigos-->
             <h2>Confira também:</h2>
-            <div>
-                <a href="">
-                    <img src="" alt="">
-                    <h4></h4>
-                </a>
-            </div>
+
+            <ul class="lista-artigos">
+                <li class="cont-lista-artigo">
+
+                    <article class="caixa-artigos">
+                        <a href="" >
+                            <figure class="fig-artigos" >
+                                <img class="img-artigos" src="img/art1-600.png" alt="gato deitado olhando para a câmera.">
+                            </figure>
+                            <h3>Descubra tudo o que precisa saber antes de adotar um amigo.</h3>
+                        </a>
+                    </article>
+                </li>
+                <li  class="cont-lista-artigo">
+                    <article id="fig-artigos2">
+                        <a href="" >
+                            <figure class="fig-artigos" >
+                                <img class="img-artigos" src="img/art2.png" alt="buldogue francês preto deitado no chão de madeira.">
+                            </figure>
+                            <h3>Como identificar sinais que seu pet pode estar doente.</h3>
+                        </a>
+                    </article>
+                </li>
+                <li class="cont-lista-artigo">
+                    <article id="fig-artigos3">
+                        <a href="">
+                            <figure class="fig-artigos">
+                                <img class="img-artigos" src="img/art3-600.png" alt="Ouriço-cacheiro sendo delicadamente segurado nas mãos de alguém.">
+                            </figure>
+                            <h3>Você sabe o que é necessário para criar um animal silvestre?</h3>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+        <section class="container-saude-pet">
+            <h2>Saiba onde encontrar hospitais veterinarios gratuitos</h2>
         </section>
     </main>
-    <footer>   
+    <footer> 
+
     </footer>
     <script> //começo do meu js
         function mostrarMenu() {
