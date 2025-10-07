@@ -229,15 +229,11 @@ h1{
 @media(max-width:584px){
     .container-principal{
         position: relative;
-        height: 500px;
+        height: 600px;
         display: grid; 
         grid-template-columns: 10% 1fr 1fr 10%;
         grid-template-rows: 70% 30%;
         align-items: start; 
-    }
-   
-    h1{
-        font-size: 25px;
     }
     .caixa-titulo{
         border-radius: 20px;
