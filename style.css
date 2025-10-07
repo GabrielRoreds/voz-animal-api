@@ -124,7 +124,7 @@ h1{
     color: #fdf3dd;
     font-family: "Bodoni Moda", serif;
     font-optical-sizing: auto;
-    font-weight: weight;
+    font-weight: 700;
     font-style: normal;
     
    /* font-family: "Story Script", sans-serif;
@@ -227,14 +227,34 @@ h1{
     }
 }
 @media(max-width:584px){
+    .container-principal{
+        position: relative;
+        height: 500px;
+        display: grid; 
+        grid-template-columns: 10% 1fr 1fr 10%;
+        grid-template-rows: 70% 30%;
+        align-items: start; 
+    }
+   
     h1{
         font-size: 25px;
     }
     .caixa-titulo{
         border-radius: 20px;
+        z-index: 10;
     }
-   .container-principal{
-        align-items: start;
+     .caixa-cão{
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       overflow: hidden;
+    }
+     #cão-cinza{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
    
 }
@@ -242,7 +262,7 @@ h1{
    
  .container-principal{ /*para telas se smartphone*/
         position: relative;/**/
-        height: 400px;
+        height: 500px; /*----*/
         display: grid;
         align-items: center;
         grid-template-columns: 10% 1fr 1fr 10%;
@@ -270,13 +290,13 @@ h1{
     h1{
         padding: 5%;
         font-size: 22px;
-        line-height: 135%;
+        line-height: 135%;/*espaçamento entre linhas*/
     }
 }
 /********parte sobre denucia*******/
 
 .container-denuncia{
-    background-image: linear-gradient(to top, #7B7189 75%, #675369, #372839 );
+    background-image: linear-gradient(to top, #7B7189 70%, #675369, #372839 );
     display: grid;
     grid-template-columns: 10% 1fr 1fr 7%;
     grid-template-rows: 100px 65px 235px 35px 65px 100px;
@@ -288,14 +308,14 @@ h2{
     grid-row: 2/3;
 
     font-family: "Marcellus", serif;
-    font-weight: 400px;
+    font-weight: large;
     font-style: normal;
     font-size: 32px;
     text-align: center;
     color: #fdf9dd;
     
 }
-h3{
+#lei-maus-tratos{
     grid-column: 2/3;
     grid-row: 3/4;
 
@@ -327,7 +347,7 @@ h3{
     grid-column: 3/4;
     grid-row: 3/6;
 
-    box-shadow: 2px 4px 7px rgb(124, 120, 117);
+    box-shadow: 2px 4px 8px rgb(124, 120, 117);
     width: 100%;
     max-width: 335px;
     aspect-ratio: 1/1;
@@ -362,7 +382,7 @@ h3{
         height: auto;
         aspect-ratio: 16/9;
     }
-    h3{
+    #lei-maus-tratos{
         grid-row: 4/5;
         grid-column: 2/3;
         
@@ -395,7 +415,7 @@ h3{
         height: auto;
         aspect-ratio: 16/9;
     }
-    h3{
+    #lei-maus-tratos{
         grid-row: 4/5;
         grid-column: 2/3;
         
