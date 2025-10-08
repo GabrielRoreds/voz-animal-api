@@ -297,17 +297,22 @@ h1{
 /********parte sobre denucia*******/
 
 .container-denuncia{
-    background-image: linear-gradient(to top, #7B7189 70%, #675369, #372839 );
+    background-image: linear-gradient(to top, #7B7189 50%, #675369, #372839 ), linear-gradient(to bottom,#7B7189 50%, #675369, #372839  );
+    background-position: top, bottom;
+    background-size: 100% 50%, 100% 50%;
+    background-repeat: no-repeat; 
+
     display: grid;
     grid-template-columns: 10% 1fr 1fr 7%;
     grid-template-rows: 100px 65px 235px 35px 65px 100px;
     justify-items: center;
     align-items: center;
 }
-h2{
+#h2-denucia{
     grid-column: 2/3;
     grid-row: 2/3;
-
+}
+h2{
     font-family: "Marcellus", serif;
     font-weight: large;
     font-style: normal;
@@ -369,7 +374,7 @@ h2{
         justify-items: center;
         align-items: center;
     }
-    h2{
+    #h2-denucia{
         grid-row: 2/3;
         grid-column: 2/3;
         
@@ -402,7 +407,7 @@ h2{
         row-gap: 2vh;
 
     }
-     h2{
+     #h2-denucia{
         grid-row: 2/3;
         grid-column: 2/3;
         
@@ -445,6 +450,49 @@ h2{
         grid-row: 9/10;
     }
 }
+/********parte sobre ongs*********/
+.container-ongs{
+    background-color: #372839;
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    grid-template-rows: 50px 65px 25px 500px 50px;
+}
+.fig-ongs{
+    max-width: 100px;
+    height: 100px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.img-ongs{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.lista-ongs{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+.item-ongs{
+    background-color: #675369;
+    border-radius: 20px;
+    width: 600px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+#h2-ongs{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
 /*********parte sobre artigos*********/
 .container-artigos{
     background-color: #5d763d;
@@ -479,7 +527,7 @@ h2{
     height: 59vh;/**/
    
 }
-article{
+.artigos-card{
     border-radius: 15px;
     border: 1px solid #3c4b29;
     max-width: 350px;
