@@ -446,58 +446,16 @@ h2{
     }
 }
 /********parte sobre ongs*********/
-.container-ongs{
+ .container-ongs{
     background-color: #372839;
-    display: grid;
-    grid-template-columns: 2fr 8fr 2fr;
-    grid-template-rows: 50px 65px 25px 500px 50px;
 }
-h3{
+ h3{
     text-align: center;
     font-family: "Marcellus", serif;
     font-weight: 400;
     font-style: normal;
     color: #fdf9dd;
     font-size: 19px;
-}
-.h3-ongs{
-    padding-bottom: 10px;
-}
-.fig-ongs{
-    max-width: 100px;
-    max-height: 100px;
-    aspect-ratio: 1/1;
-    overflow: hidden;
-    border-radius: 10px;
-}
-.img-ongs{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.lista-ongs{
-    display: flex;        /*********/
-    flex-direction: column;
-    gap: 50px;
-    align-items: center;
-
-    grid-column: 2/3;
-    grid-row: 4/5;
-}
-.item-ongs{
-    background-color: rgb(103, 83, 105, 0.25);
-    border-radius: 20px;
-    width: 600px;
-    height: 130px;
-    display: flex;         /********/
-    align-items: center;
-    justify-content: flex-start;
-    gap: 50px;
-    padding: 35px;
-}
-#h2-ongs{
-    grid-column: 2/3;
-    grid-row: 2/3;
 }
 .item-ong-links{ /*referente a tag ---a de link*/
     font-family: "Marcellus", serif;
@@ -506,34 +464,143 @@ h3{
     color: #fdf9dd;
     text-decoration: underline;
 }
-.lista-ongs-links{
-    padding-left: 35px;
-}
 #icon-site, #icon-insta, #icon-facebook{
-    color: #fdf9dd;
+        color: #fdf9dd;
 }
 .item-ong-links:hover {
     font-size: larger;
     color: #AAE876;
 }
-@media(max-width:742px){
-    .item-ongs{
-        width: 70vw;
-        gap: 3vw;
+@media(max-width: 2560px) and (min-width:600px){
+    .container-ongs{
+        display: grid;
+        grid-template-columns: 2fr 8fr 2fr;
+        grid-template-rows: 50px 65px 25px 500px 50px;
+    }
+     #h2-ongs{
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+     .lista-ongs{
+        display: flex;      
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+
+        grid-column: 2/3;
+        grid-row: 4/5;
+    }
+     .item-ongs{ 
+        background-color: rgb(103, 83, 105, 0.25);
+        border-radius: 20px;
+        width: 600px;
+        height: 130px;
+
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 4fr 2fr 1fr;
+        grid-template-rows: 15px 25px 15px 60px 15px;
+        
+    }
+    h3{
+        grid-column: 3/6;
+        grid-row: 2/3;
+    }
+    .fig-ongs{
+        max-width: 100px;
+        max-height: 100px;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        border-radius: 10px;
+
+        grid-column: 2/3;
+        grid-row: 2/5;
+    }
+    .img-ongs{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .lista-ongs-links{
+        grid-column: 4/5;
+        grid-row: 4/5;
+        justify-self: center;
+    }
+   
+}
+@media(max-width:599px){
+    h2{
+        font-size: 28px;
+        padding-top: 10%;
+        margin-left: 4vw;
+        margin-right: 4vw;
+        margin-bottom: 3vh;
     } 
-}
-@media(max-width:713px){
-    .item-ongs{
-        gap: 2vw;
+    .fig-ongs{
+        width: 100px;
+        height: 100px;
+        aspect-ratio: 1/1;
+        overflow: clip;
+        border-radius: 10px;
+       
+        grid-column: 2/-3;
+        grid-row: 4/5;
+        justify-self: end;
+        
+    }
+    .img-ongs{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .lista-ongs-links{
+        grid-column: 3/4;
+        grid-row: 4/5;
+        align-self: center;
+    }
+    .h3-ongs{
+       grid-column: 2/-2;
+       grid-row: 2/3;
+    }
+    .item-ongs{ /*li com imagem titulo e link*/
+        width: 77%;
+        display: grid;
+        grid-template-columns: 1fr 9fr 9fr 1fr;
+        grid-template-rows: 13px 25px 13px 110px 9px;
+        align-items: center;
+        column-gap: 20px;
+        border: 1px solid #7B7189;
+        border-radius: 30px;
+    }
+    .lista-ongs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin: 20px;
+    }
+    .container-ongs{
+        height: 730px;
     }
 }
-@media(max-width:600px){
-    #h2-ongs{
-        font-size: 27px;
-    }
+@media (max-width:426px) {
     .item-ongs{
-        background-color: rgb(103, 83, 105, 0);
-    
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 4fr 4fr 1fr;
+        grid-template-rows: 15px 30px 7px 110px 5px;
+    }
+    .h3-ongs{
+        font-size: 17px;
+    }
+    h2{
+        font-size: 26px;
+
+    }
+
+}
+@media(max-width:336px){
+    .item-ongs{
+       column-gap: 10px;
     }
 }
 
