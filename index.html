@@ -5,8 +5,9 @@
     <title>Voz Animal</title>
     <meta name="description" content="Unidos pela causa animal, divulgando a promoção do bem-estar, a proteção e os direitos dos animais, combatendo a crueldade, o abandono e a exploração.">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" /> <!--menu amburguer-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" /> <!--menu amburguer-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"> <!--icon de rede sociais-->
+   
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -16,6 +17,7 @@
             <img class="img-menu" src="img/logo-200.png" alt="Logo do Voz Animal">
         </a>
         <span id="icon-menu" class="material-symbols-outlined" onclick="mostrarMenu()"> menu </span>
+     <!--   <i  id="icon-menu"class="bi bi-list" onclick="mostrarMenu()"></i> --> <!--segunda opção-->
         <nav class="menu">
             <ul class="lista-menu" id="listaMenu">
                 <li><a class="menu-item" href="">Ongs</a></li>   
@@ -41,7 +43,7 @@
            <div class="caixa-cão">
             <picture>
                 <source media="(max-width: 708px)" srcset="img/cão-239.png">
-                <img id="cão-cinza" src="img/cão-1200.png" alt="cachorro cinza com olhos azuis">
+                <img id="cão-cinza" src="img/cão-1200.jpg" alt="cachorro cinza com olhos azuis">
             </picture>
            </div> 
            <div class="caixa-titulo">
@@ -185,12 +187,15 @@
                 <a href="" id="link-saude-pet">
                     <h2 id="h2-saudepet">Saiba onde encontrar hospitais veterinarios gratuitos</h2>
                 </a>
-    
-        
         </section>
     </main>
     <footer> 
-
+        <figure id="fig-rodape">
+             <img class="img-menu" src="img/logo-200.png" alt="Logo do Voz Animal">
+        </figure>
+        <p id="msg1">Todos eles merecem carinho e amor </p>
+        <span id="icon-pet" class="material-symbols-outlined">pets</span>
+        <p id="msg2">Unidos pela causa animal, divulgando a promoção do bem-estar, a proteção e os direitos dos animais, combatendo a crueldade, o abandono e a exploração.  </p>
     </footer>
     <script> //começo do meu js
         function mostrarMenu() {
