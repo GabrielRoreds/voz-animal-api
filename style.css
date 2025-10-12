@@ -470,7 +470,7 @@ h2{
     color: #fdf9dd;
     text-decoration: underline;
 }
-#icon-site, #icon-insta, #icon-facebook, #icon-pet{
+#icon-site, #icon-insta, #icon-facebook{
         color: #fdf9dd;
 }
 .item-ong-links:hover {
@@ -796,6 +796,18 @@ footer{
     font-style: normal;
     text-align: justify;
 }
+#msg1::after{
+    content: '\e91d';
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 
+      'FILL' 0,
+      'wght' 500,
+      'GRAD' 0,
+      'opsz' 24;
+    vertical-align: middle; 
+    margin-left: 5px;
+    font-size: 25px;
+}
 @media(max-width:526px){
     footer{
         display: grid;
@@ -811,12 +823,6 @@ footer{
         grid-row: 3/4;
         grid-column: 2/5;
      
-    }
-    #icon-pet{
-        grid-column: 5/6;
-        grid-row: 3/4;
-        justify-self: end;
-        margin-left: 10px;
     }
     #msg2{
         grid-column: 2/6;
@@ -839,12 +845,6 @@ footer{
         grid-column: 5/6;
         grid-row: 2/3;
     }
-    #icon-pet{
-        grid-column: 6/7;
-        grid-row: 2/3;
-    
-        justify-self: center;
-    }
     #msg2{
         grid-row: 4/5;
         grid-column: 3/6;
@@ -866,12 +866,6 @@ footer{
         grid-column: 4/5;
         grid-row: 2/3;
         
-    }
-   #icon-pet{
-        grid-column: 5/6;
-        grid-row: 2/3;
-        justify-self: end;
-      
     }
     #msg2{
         grid-column: 3/-2;

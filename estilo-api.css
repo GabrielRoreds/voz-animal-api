@@ -242,15 +242,24 @@ footer{
     background-color: #ccaecf;
    
 }
-#icon-pet{
-    color: #fdf9dd;
-}
 #msg1, #msg2{
     color: #fdf9dd;
     font-family: "Marcellus", serif;
     font-weight: 400;
     font-style: normal;
     text-align: justify;
+}
+#msg1::after{
+    content: '\e91d';
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 
+      'FILL' 0,
+      'wght' 500,
+      'GRAD' 0,
+      'opsz' 24;
+    vertical-align: middle; 
+    margin-left: 5px;
+    font-size: 25px;
 }
 @media(max-width:526px){
     footer{
