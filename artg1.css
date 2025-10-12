@@ -229,7 +229,7 @@ span{
     color: #fdf9dd;
     
 }
-@media(max-width:660px){
+@media(max-width:700px){
     h1{
         font-size: 25px;
     }
