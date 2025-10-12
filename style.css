@@ -631,6 +631,9 @@ h2{
 .h3-artigo{
     text-align: justify;
 }
+.caixa-artigos:active{
+    transform: scale(1.2);
+}
 @media(max-width:2560px) and (min-width:964px){
     .container-artigos{
         display: flex;
