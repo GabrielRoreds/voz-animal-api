@@ -332,16 +332,18 @@ h2{
     grid-row: 4/5 ;
 
     background-color: #372839;
-    color: #fdf3dd;
-    font-family: "Marcellus", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15px;
     width: 150px;
     height: 50px;
     border-radius: 20px;
     border: none;
     cursor: pointer;
+}
+#link-botao-artigo{
+    color: #fdf3dd;
+    font-family: "Marcellus", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
 }
 #botão-artigo:hover{
      box-shadow: 2px 4px 7px rgb(124, 120, 117);
@@ -402,6 +404,7 @@ h2{
         grid-template-columns: 1fr 8fr 1fr;
         grid-template-rows: 65px 75px 255px 200px 35px 65px;
         row-gap: 2vh;
+        height: 800px;
 
     }
      #h2-denucia{
@@ -435,6 +438,7 @@ h2{
         grid-template-columns: 1fr 8fr 1fr;
         grid-template-rows: 50px 65px 50px 50px 50px 50px  180px 10px 35px 50px;
         row-gap: 0;
+        height: 700px;
     }
     .fig-img2{
         grid-row: 3/7;
@@ -781,7 +785,7 @@ h2{
 /*******rodapé*******/
 footer{
     height: 400px;
-    background-image: linear-gradient(to bottom, rgba(93, 118, 61,1), rgba(153, 163, 137,0.7), rgba(204, 174, 207,0.7) );
+    background-image: linear-gradient(to bottom, rgba(93, 118, 61,1), rgba(153, 163, 137, 0.702), rgba(204, 174, 207,0.7) );
     background-color: #ccaecf;
    
 }
