@@ -236,6 +236,9 @@ span{
     h2{
         font-size: 19px;
     }
+    .container-artg{
+        width: 95%;
+    }
     .caixa-tex{
         width: 80%;
     }
