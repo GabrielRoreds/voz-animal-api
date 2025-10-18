@@ -1,6 +1,8 @@
+//meu server
 const express = require('express'); /*framework para criar servidores e rotas HTTP.*/
 const axios = require('axios'); /*biblioteca para fazer requisições HTTP (usada para consultar a BrasilAPI)*/
 const cors = require('cors'); /*permite que seu site (em outro domínio ou porta) acesse sua API sem bloqueio*/
+
 
 const app = express();
 const PORT = 3000; /*define a porta onde sua API vai rodar localmente (http://localhost:3000)*/
@@ -38,10 +40,11 @@ app.get('/buscar', async (req, res) => {
       hospitais_em_sp:hospitaisFiltrados
     });
   } catch (error) {
-    res.status(500).json({ erro: 'Erro ao buscar CEP' });
+    console.error("Erro ao buscar CEP:", error.message); /*Assim, se algo falhar, o terminal mostrará o motivo real*/
+    res.status(500).json({ erro: 'Erro ao buscar CEP', detalhes: error.message });
   }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(` API atulizada rodando em http://localhost:${PORT}`);
 });

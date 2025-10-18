@@ -14,7 +14,9 @@
 function buscarCep() {
   const cep = document.getElementById('cepInput').value;
 
-  fetch(`http://localhost:3000/buscar?cep=${cep}`)
+  fetch(`http://127.0.0.1:3000/buscar?cep=${cep}`)
+
+//  fetch(`http://localhost:3000/buscar?cep=${cep}`)
     .then(res => res.json())
     .then(data => {
       if (data.erro) {
@@ -27,7 +29,7 @@ function buscarCep() {
       }).join('');
 
       document.getElementById('resultado').innerHTML = `
-        <p><strong>CEP:</strong> ${data.cep}</p>
+       <p><strong>CEP:</strong> ${data.cep}</p>
         <p><strong>Cidade:</strong> ${data.cidade}</p>
         <p><strong>Bairro:</strong> ${data.bairro}</p>
         <p><strong>Estado:</strong> ${data.estado}</p>
