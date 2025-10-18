@@ -1,5 +1,3 @@
-const PORT = 3000;
-
 function mostrarMenu() { /*função do menu mobile*/
   const menu = document.getElementById('listaMenu');
 
@@ -12,7 +10,9 @@ function mostrarMenu() { /*função do menu mobile*/
     menu.classList.add('active');
   }
 }
+window.mostrarMenu = mostrarMenu; //tornar a função globalmente acessível
 /*****função para api****/
+const PORT = 3000;
 function buscarCep() {
   const cep = document.getElementById('cepInput').value;
 
