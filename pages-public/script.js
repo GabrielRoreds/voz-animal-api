@@ -29,7 +29,7 @@ function buscarCep() {
       }).join('');
 
       document.getElementById('resultado').innerHTML = `
-        <p><strong>CEP:</strong> ${data.cep}</p>
+       <p><strong>CEP:</strong> ${data.cep}</p>
         <p><strong>Cidade:</strong> ${data.cidade}</p>
         <p><strong>Bairro:</strong> ${data.bairro}</p>
         <p><strong>Estado:</strong> ${data.estado}</p>
