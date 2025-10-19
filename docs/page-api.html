@@ -1,67 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Voz Animal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Descubra Hospitais Veterinários em São Paulo">
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&" />
-  <!--icones do google-->
-  <link rel="stylesheet" href="estilo-api.css">
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <title>Voz Animal - Hospitais Veterinários</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubra Hospitais Veterinários em São Paulo">
+    <link rel="stylesheet" href="estilo-api.css">
 </head>
-
 <body>
-  <header>
-    <a href="index.html">
-      <img class="img-menu" src="img/logo-200.png" alt="Logo do Voz Animal">
-    </a>
-    <span id="icon-menu" class="material-symbols-outlined" onclick="mostrarMenu()"> menu </span>
-    <!--   <i  id="icon-menu"class="bi bi-list" onclick="mostrarMenu()"></i> --> <!--segunda opção-->
-    <nav class="menu">
-      <ul class="lista-menu" id="listaMenu">
-        <li><a class="menu-item" href="index.html#h2-ongs">Ongs</a></li>
-        <hr class="linha-menu">
+    <header>
+        <a href="index.html">
+            <img class="img-menu" src="img/logo-200.png" alt="Logo do Voz Animal">
+        </a>
+        <span id="icon-menu" class="material-symbols-outlined" onclick="mostrarMenu()"> menu </span>
+        <nav class="menu">
+            <ul class="lista-menu" id="listaMenu">
+                <li><a class="menu-item" href="index.html#h2-ongs">Ongs</a></li>   
+                <li><a class="menu-item" href="index.html#h2-denucia">Denuncia</a></li>
+                <li><a class="menu-item" href="index.html#artigos-informaçao">Informação</a></li>
+                <li><a class="menu-item" href="page-api.html">Saúde pet</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <li><a class="menu-item" href="index.html#h2-denucia">Denuncia</a></li>
-        <hr class="linha-menu">
+    <main>
+        <section id="container-api">
+            <h1>Descubra Hospitais Veterinários em São Paulo</h1>
+            <form onsubmit="buscarCEP(); return false;">
+                <input id="cepInput" type="text" placeholder="Digite o seu CEP: XXXXX-XXX" required minlength="8" maxlength="9">
+                <button type="submit">Buscar</button>
+            </form>
+            <div id="resultado"></div>
+            <div id="map" style="height:500px; width:100%; margin-top:20px;"></div>
+        </section>
+    </main>
 
-        <li><a class="menu-item" href="index.html#artigos-informaçao">Informação</a></li>
-        <hr class="linha-menu">
+    <footer>
+        <p>Todos eles merecem carinho e amor</p>
+    </footer>
 
-        <li><a class="menu-item" href="page-api.html">Saúde pet</a></li>
-        <hr class="linha-menu">
-      </ul>
-
-    </nav>
-  </header>
-  <main>
-    <section id="container-api">
-
-      <h1>Descubra Hospitais Veterinários em São Paulo</h1>
-      <form action="" method="post" onsubmit="buscarCep(); return false;">
-        <div id="container-input">
-
-          <input id="cepInput" name="cepInput" type="text" placeholder="Digite o seu CEP:XXXXX-XXX" required
-            minlength="8" maxlength="9" autocomplete="postal-code">
-        </div>
-
-        <button id="botao-procurar" type="submit">Procurar</button>
-      </form>
-      <div id="resultado"></div>
-    </section>
-  </main>
-  <footer>
-    <figure id="fig-rodape">
-      <img class="img-menu" src="img/logo-200.png" alt="Logo do Voz Animal">
-    </figure>
-    <p id="msg1">Todos eles merecem carinho e amor </p>
-    <p id="msg2">Unidos pela causa animal, divulgando a promoção do bem-estar, a proteção e os direitos dos animais,
-      combatendo a crueldade, o abandono e a exploração. </p>
-  </footer>
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYCtF9NAiSHACxcDstxxRk4mFpb6RVwc&callback=initMap&libraries=places">
+    </script>
 </body>
-
 </html>
