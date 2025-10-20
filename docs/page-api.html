@@ -12,6 +12,10 @@
   <!--icones do google-->
   <link rel="stylesheet" href="estilo-api.css">
   <script src="script.js"></script>
+   <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYCtF9NAiSHACxcDstxxRk4mFpb6RVwc&callback=initMap&libraries=places">
+    </script> <!--alteração para api-->
+
 </head>
 
 <body>
@@ -42,7 +46,7 @@
     <section id="container-api">
 
       <h1>Descubra Hospitais Veterinários em São Paulo</h1>
-      <form action="" method="post" onsubmit="buscarCep(); return false;">
+      <form onsubmit="buscarCep(); return false;">
         <div id="container-input">
 
           <input id="cepInput" name="cepInput" type="text" placeholder="Digite o seu CEP:XXXXX-XXX" required
@@ -52,6 +56,9 @@
         <button id="botao-procurar" type="submit">Procurar</button>
       </form>
       <div id="resultado"></div>
+      <!--alteração para api-->
+      <div id="map"></div>
+
     </section>
   </main>
   <footer>
