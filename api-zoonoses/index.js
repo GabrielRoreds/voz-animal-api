@@ -1,15 +1,14 @@
-//meu server
-const express = require('express'); /*framework para criar servidores e rotas HTTP.*/
-const axios = require('axios'); /*biblioteca para fazer requisições HTTP (usada para consultar a BrasilAPI)*/
-const cors = require('cors'); /*permite que seu site (em outro domínio ou porta) acesse sua API sem bloqueio*/
+const express = require('express');
+const axios = require('axios');
+const cors = require('cors');
 
 const app = express();
-const PORT = 3000; /*define a porta onde sua API vai rodar localmente (http://localhost:3000)*/
+const PORT = 3000;
 
-app.use(cors()); // Libera acesso externo à API
+app.use(cors());
 
 // Dados fictícios dos hospitais públicos veterinários
-const hospitais = [ /*dados*/
+const hospitais = [
   { nome: "Hospital Veterinário Zona Norte", bairro: "Vila Nova Cachoeirinha" },
   { nome: "Hospital Veterinário Zona Sul", bairro: "Capão Redondo" },
   { nome: "Hospital Veterinário Zona Leste", bairro: "Tatuapé" },
@@ -28,10 +27,12 @@ app.get('/buscar', async (req, res) => {
     if (city !== 'São Paulo') {
       return res.status(404).json({ erro: 'CEP fora de São Paulo' });
     }
-    const hospitaisFiltrados = hospitais.filter(hospital =>
-      hospital.bairro.toLowerCase() === neighborhood.toLowerCase());
 
-    res.json({
+    const hospitaisFiltrados = hospitais.filter(h =>
+      h.bairro.toLowerCase() === neighborhood.toLowerCase()
+    );
+
+    return res.json({
       cep,
       cidade: city,
       bairro: neighborhood,
@@ -39,17 +40,11 @@ app.get('/buscar', async (req, res) => {
       hospitais_em_sp: hospitaisFiltrados
     });
   } catch (error) {
-    console.error("❌ Erro ao buscar CEP:");
-    if (error.response) {
-      console.error("Status:", error.response.status);
-      console.error("Dados:", error.response.data);
-    } else {
-      console.error("Mensagem:", error.message);
+    console.error("❌ Erro ao buscar CEP:", error.message);
+    return res.status(500).json({ erro: 'Erro ao buscar dados do CEP.' });
   }
-   }
-    res.status(500).json({ erro: 'Erro ao buscar dados do CEP.' });
 });
 
 app.listen(PORT, () => {
-  console.log(` API atulizada rodando em http://localhost:${PORT}`);
+  console.log(`✅ API rodando em http://localhost:${PORT}`);
 });
