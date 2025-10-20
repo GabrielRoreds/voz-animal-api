@@ -1,159 +1,134 @@
-function mostrarMenu() { /*função do menu mobile*/
+/************* MENU MOBILE *************/
+function mostrarMenu() {
   const menu = document.getElementById('listaMenu');
 
-  // Se o menu está ativo (visível)
   if (menu.classList.contains('active')) {
-    // Remove a classe 'active' para fechar o menu
-    menu.classList.remove('active');
+    menu.classList.remove('active'); // fecha o menu
   } else {
-    // Adiciona a classe 'active' para abrir o menu
-    menu.classList.add('active');
+    menu.classList.add('active'); // abre o menu
   }
 }
-window.mostrarMenu = mostrarMenu; //tornar a função globalmente acessível
+window.mostrarMenu = mostrarMenu; // torna a função globalmente acessível
 
-/***************função para api novas alterações**********/
+/************* MAPA E HOSPITAIS *************/
 let map;
 let geocoder;
+let infoWindow;
+
+// Lista das unidades fixas
+const unidades = [
+  {
+    nome: "Unidade Leste",
+    endereco: "R. Ulisses Cruz, 285 - Tatuapé, São Paulo - SP",
+    lat: -23.540908,
+    lng: -46.561853
+  },
+  {
+    nome: "Unidade Norte",
+    endereco: "Av. Santa Inês, 1500 - Santana, São Paulo - SP",
+    lat: -23.474215,
+    lng: -46.633672
+  },
+  {
+    nome: "Unidade Sul",
+    endereco: "Av. Adolfo Pinheiro, 911 - Santo Amaro, São Paulo - SP",
+    lat: -23.654345,
+    lng: -46.701176
+  }
+];
 
 // Inicializa o mapa
 function initMap() {
-  // Inicializa mapa e geocoder globais
   map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -23.55052, lng: -46.633308 },
     zoom: 11,
-    center: { lat: -23.5505, lng: -46.6333 }, // Centro de São Paulo
     styles: [
-      { elementType: "geometry", stylers: [{ color: "#0a0f1a" }] },
-      { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
-      { elementType: "labels.text.fill", stylers: [{ color: "#8ab4f8" }] },
-      { elementType: "labels.text.stroke", stylers: [{ color: "#0a0f1a" }] },
-      { featureType: "administrative", elementType: "geometry", stylers: [{ color: "#1c2a48" }] },
-      { featureType: "poi", elementType: "geometry", stylers: [{ color: "#12233b" }] },
-      { featureType: "poi.park", elementType: "geometry", stylers: [{ color: "#102030" }] },
-      { featureType: "road", elementType: "geometry.fill", stylers: [{ color: "#1a2b4c" }] },
-      { featureType: "road", elementType: "geometry.stroke", stylers: [{ color: "#0f1a2d" }] },
-      { featureType: "road.highway", elementType: "geometry.fill", stylers: [{ color: "#243b6b" }] },
-      { featureType: "water", elementType: "geometry", stylers: [{ color: "#0b1733" }] },
-      { featureType: "water", elementType: "labels.text.fill", stylers: [{ color: "#4f70a1" }] },
-    ],
+      { elementType: "geometry", stylers: [{ color: "#0b1e33" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#ffffff" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#000000" }] },
+      { featureType: "water", elementType: "geometry", stylers: [{ color: "#12263f" }] },
+      { featureType: "road", elementType: "geometry", stylers: [{ color: "#1c3357" }] },
+      { featureType: "road", elementType: "labels.text.fill", stylers: [{ color: "#ffffff" }] },
+      { featureType: "poi", stylers: [{ visibility: "off" }] }
+    ]
   });
 
   geocoder = new google.maps.Geocoder();
-   // Adiciona os hospitais fixos
-  adicionarHospitais();
-}
-// Lista dos hospitais públicos
-const hospitais = [
-  {
-    nome: "Unidade Oeste - USP",
-    endereco: "Av. Professor Orlando Marques de Paiva, 87 – Butantã",
-    posicao: { lat: -23.5614, lng: -46.7376 },
-  },
-  {
-    nome: "Unidade Norte - Casa Verde",
-    endereco: "Rua Atílio Piffer, 687 - Casa Verde",
-    posicao: { lat: -23.4947, lng: -46.6575 },
-  },
-  {
-    nome: "Unidade Sul - Jurubatuba",
-    endereco: "Rua Agostino Togneri, 153 - Jurubatuba",
-    posicao: { lat: -23.6813, lng: -46.6991 },
-  },
-  {
-    nome: "Unidade Leste - Tatuapé",
-    endereco: "R. Ulisses Cruz, 285 - Tatuapé",
-    posicao: { lat: -23.5403, lng: -46.5677 },
-  },
-];
+  infoWindow = new google.maps.InfoWindow();
 
-// Adiciona marcadores dos hospitais
-function adicionarHospitais() {
-  hospitais.forEach((hospital) => {
+  // Adiciona marcadores das unidades
+  unidades.forEach((u) => {
     const marker = new google.maps.Marker({
-      position: hospital.posicao,
-      map,
-      title: hospital.nome,
-    });
-
-    const info = new google.maps.InfoWindow({
-      content: `
-        <div style="color: #000; font-size: 14px; line-height: 1.5; max-width: 220px;">
-          <strong style='color:#000; font-weight:700;'>${hospital.nome}</strong><br>
-          ${hospital.endereco}
-        </div>
-      `,
+      position: { lat: u.lat, lng: u.lng },
+      map: map,
+      title: u.nome
     });
 
     marker.addListener("click", () => {
-      info.open(map, marker);
+      infoWindow.setContent(`
+        <div style="color:black; font-weight:bold;">
+          ${u.nome}<br>${u.endereco}
+        </div>
+      `);
+      infoWindow.open(map, marker);
     });
-
-    // Salva o marker e o info dentro do objeto hospital
-    hospital.marker = marker;
-    hospital.info = info;
   });
 }
 
-// Calcula distância entre dois pontos (em km)
-function calcularDistancia(lat1, lng1, lat2, lng2) {
-  const R = 6371; // Raio da Terra em km
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLng = (lng2 - lng1) * Math.PI / 180;
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(lat1 * Math.PI / 180) *
-      Math.cos(lat2 * Math.PI / 180) *
-      Math.sin(dLng / 2) *
-      Math.sin(dLng / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c;
-}
+// Função chamada ao enviar o CEP
+function buscarCep() {
+  const cep = document.getElementById("cepInput").value.replace(/\D/g, "");
 
-// Buscar CEP e mostrar hospital mais próximo
-function buscarCEP() {
-  const cep = document.getElementById('cepInput').value.trim();
-  if (!cep) {
-    alert("Por favor, insira um CEP válido.");
+  if (cep.length !== 8) {
+    alert("Digite um CEP válido!");
     return;
   }
 
-  if (!map || !geocoder) {
-    alert("O mapa ainda está carregando, aguarde alguns segundos.");
-    return;
-  }
-
-  geocoder.geocode({ address: `${cep}, São Paulo, SP` }, (results, status) => {
-    if (status === "OK" && results[0]) {
-      const location = results[0].geometry.location;
-      const lat = location.lat();
-      const lng = location.lng();
-
-      // Encontra o hospital mais próximo
-      let hospitalMaisProximo = null;
-      let menorDistancia = Infinity;
-
-      hospitais.forEach((hospital) => {
-        const dist = calcularDistancia(lat, lng, hospital.posicao.lat, hospital.posicao.lng);
-        if (dist < menorDistancia) {
-          menorDistancia = dist;
-          hospitalMaisProximo = hospital;
-        }
-      });
-
-      if (hospitalMaisProximo) {
-        map.setCenter(hospitalMaisProximo.posicao);
-        map.setZoom(14);
-
-        // Abre automaticamente a infoWindow do hospital mais próximo
-        hospitalMaisProximo.info.open(map, hospitalMaisProximo.marker);
+  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.erro) {
+        alert("CEP não encontrado!");
+        return;
       }
 
-    } else {
-      alert("CEP inválido ou não encontrado.");
-      console.error("Erro ao localizar CEP:", status);
-    }
-  });
+      const endereco = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+
+      geocoder.geocode({ address: endereco }, (results, status) => {
+        if (status === "OK" && results[0]) {
+          const localizacaoUsuario = results[0].geometry.location;
+
+          let unidadeMaisProxima = null;
+          let menorDistancia = Infinity;
+
+          unidades.forEach((u) => {
+            const distancia = google.maps.geometry.spherical.computeDistanceBetween(
+              new google.maps.LatLng(u.lat, u.lng),
+              localizacaoUsuario
+            );
+            if (distancia < menorDistancia) {
+              menorDistancia = distancia;
+              unidadeMaisProxima = u;
+            }
+          });
+
+          map.setCenter({ lat: unidadeMaisProxima.lat, lng: unidadeMaisProxima.lng });
+          map.setZoom(14);
+
+          infoWindow.setContent(`
+            <div style="color:black; font-weight:bold;">
+              ${unidadeMaisProxima.nome}<br>${unidadeMaisProxima.endereco}
+            </div>
+          `);
+          infoWindow.setPosition({ lat: unidadeMaisProxima.lat, lng: unidadeMaisProxima.lng });
+          infoWindow.open(map);
+
+        } else {
+          alert("Não foi possível localizar o CEP informado.");
+        }
+      });
+    })
+    .catch(() => alert("Erro ao buscar o CEP!"));
 }
-/****************função api antiga***********/
 
 
