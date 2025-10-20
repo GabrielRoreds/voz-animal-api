@@ -12,9 +12,11 @@
   <!--icones do google-->
   <link rel="stylesheet" href="estilo-api.css">
   <script src="script.js"></script>
-   <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYCtF9NAiSHACxcDstxxRk4mFpb6RVwc&callback=initMap&libraries=places">
-    </script> <!--alteração para api-->
+   <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYCtF9NAiSHACxcDstxxRk4mFpb6RVwc&callback=initMap&libraries=places"
+  async
+  defer>
+</script>
 
 </head>
 
@@ -58,6 +60,27 @@
       <div id="resultado"></div>
       <!--alteração para api-->
       <div id="map"></div>
+
+    </section>
+  </main>
+    <footer>
+    <figure id="fig-rodape">
+      <img class="img-menu" src="img/logo-200.png" alt="Logo do Voz Animal">
+    </figure>
+    <p id="msg1">Todos eles merecem carinho e amor </p>
+    <p id="msg2">Unidos pela causa animal, divulgando a promoção do bem-estar, a proteção e os direitos dos animais,
+      combatendo a crueldade, o abandono e a exploração. </p>
+  </footer>
+
+  <!-- 🔽 Mova os scripts para o final -->
+  <script src="script.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsYCtF9NAiSHACxcDstxxRk4mFpb6RVwc&callback=initMap&libraries=places,geometry"
+    async defer>
+  </script>
+</body>
+</html>
+
 
     </section>
   </main>
